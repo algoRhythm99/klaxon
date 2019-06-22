@@ -4,7 +4,9 @@
 /gen
 /default.properties
 /local.properties
-
+debug/
+release/
+build/
 
 # Created by https://www.gitignore.io/api/gradle,androidstudio
 # Edit at https://www.gitignore.io/?templates=gradle,androidstudio

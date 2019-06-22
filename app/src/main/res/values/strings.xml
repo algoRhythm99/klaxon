@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright (c) 2007, Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); 
- * you may not use this file except in compliance with the License. 
- * You may obtain a copy of the License at 
- *
- *     http://www.apache.org/licenses/LICENSE-2.0 
- *
- * Unless required by applicable law or agreed to in writing, software 
- * distributed under the License is distributed on an "AS IS" BASIS, 
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- * See the License for the specific language governing permissions and 
- * limitations under the License.
- */
--->
-
-<!-- This file contains resource definitions for displayed strings, allowing
-     them to be changed based on the locale and options. -->
 
 <resources>
     <!-- window and activity names -->
-    <string name="app_name">Klaxon</string>
+    <string name="app_name">Klaxon Reborn</string>
     <string name="prefs_activity">Preferences</string>
     <string name="replylist_activity">Reply Listing</string>
+    <string name="reply_editor">Reply Editor</string>
+    <string name="changelog_activity">Changelog</string>
     <!-- menu items -->
     <string name="notify_page">You have been paged</string>
     <string name="sms_ok">Response Sent.</string>
     <string name="sms_failed">Response Failed. Please try again.</string>
     <string name="esclist_empty">No pages&#8230; yet.</string>
+    <string name="receive_settings">Incoming Message Settings</string>
+    <string name="page_parser_type">Page Parser Type</string>
+    <string name="notification_prefs">Notifications</string>
 
     <!-- replying and deleting -->
     <string name="delete_all">Delete All</string>
@@ -42,15 +27,17 @@
     <string name="add_reply">Add new reply</string>
 
     <!-- Prefs -->
-    <string name="pref_oncall">On Call</string>
-    <string name="pref_oncall_summary">Are you oncall?</string>
+    <string name="pref_oncall">Are you oncall?</string>
+    <string name="pref_oncall_off">Not Oncall</string>
+    <string name="pref_oncall_on">Oncall</string>
     <string name="pref_alertsound">Alert Sound</string>
-    <string name="pref_alarmstream">Use Alarm Volume?</string>
-    <string name="pref_alarmstream_summary">use the alarm volume, instead of the ringer volume</string>
+    <string name="pref_alarm_volume">Use Alarm Volume?</string>
+    <string name="pref_alarm_volume_on">Alarm Volume</string>
+    <string name="pref_alarm_volume_off">Ringer Volume</string>
     <string name="pref_smssettings">Sms Settings</string>
     <string name="pref_smssettings_summary">preferences for pages received by SMS</string>
     <string name="pref_sms_sender">Sender</string>
-    <string name="pref_sms_sender_summary">substring match on sender phone number or email</string>
+    <string name="pref_sms_sender_summary">substring match on sender phone number, email, or contact name</string>
     <string name="pref_sms_subject">Include Subject Line</string>
     <string name="pref_sms_subject_summary">include the subject line in parenthesis in reply.</string>
     <string name="pref_sms_servicecenter">Use Received Service Center</string>
@@ -76,5 +63,23 @@
     <string name="alert_no_subject">Subject not specified</string>
     <string name="alert_no_body">Body not specified</string>
 
+    <!-- Preference Titles -->
+    <string name="title_activity_settings">Settings</string>
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- defaults -->
+    <string name="default_sender_match">*</string>
 </resources>
 
