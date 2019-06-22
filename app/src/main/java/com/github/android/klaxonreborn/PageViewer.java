@@ -1,13 +1,7 @@
 package com.github.android.klaxonreborn;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import org.nerdcircus.android.klaxon.Pager.Replies;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,8 +10,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.github.android.klaxonreborn.Pager.Replies;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 
 public class PageViewer extends Activity {
     private String TAG = "PageViewer";

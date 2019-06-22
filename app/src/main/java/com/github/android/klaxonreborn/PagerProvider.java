@@ -1,8 +1,5 @@
 package com.github.android.klaxonreborn;
 
-import org.nerdcircus.android.klaxon.Pager.Pages;
-import org.nerdcircus.android.klaxon.Pager.Replies;
-
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
@@ -18,6 +15,8 @@ import android.util.Log;
 
 import com.github.android.klaxonreborn.Pager.Pages;
 import com.github.android.klaxonreborn.Pager.Replies;
+
+
 public class PagerProvider extends ContentProvider {
     private DatabaseHelper mDbHelper;
 

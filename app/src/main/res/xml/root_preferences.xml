@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        app:key="is_oncall"
+        app:title="@string/pref_oncall"
+        app:defaultValue="true"
+        app:summaryOff="@string/pref_oncall_off"
+        app:summaryOn="@string/pref_oncall_on"
+        />
+
+    <PreferenceCategory
+        app:key="notification_prefs"
+        app:title="@string/notification_prefs"
+        >
+        <!--
+        <Preference
+            app:defaultValue="false"
+            app:key="alert_sound"
+            app:title="@string/pref_alertsound" />
+        -->
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="use_alarm_volume"
+            app:summaryOff="@string/pref_alarm_volume_off"
+            app:summaryOn="@string/pref_alarm_volume_on"
+            app:title="@string/pref_alarm_volume" />
+
+        <SwitchPreferenceCompat
+            app:key="vibrate"
+            app:title="@string/pref_vibrate"
+            app:defaultValue="true"
+            />
+
+        <ListPreference
+            app:key="notification_interval"
+            app:title="@string/pref_notificationtime"
+            app:summary="@string/pref_notificationtime"
+            app:defaultValue="20000"
+            app:entries="@array/intervals"
+            app:entryValues="@array/intervals_in_ms"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="receive settings"
+        app:title="@string/receive_settings"
+        >
+        <EditTextPreference
+            app:key="sender_match"
+            app:title="@string/pref_sms_sender"
+            app:defaultValue="@string/default_sender_match"
+            app:summary="@string/pref_sms_sender_summary"
+            />
+        <ListPreference
+            app:key="pageparser"
+            app:title="@string/page_parser_type"
+            app:entries="@array/pageparser"
+            app:entryValues="@array/pageparser"
+            app:defaultValue="Standard"
+            />
+        <SwitchPreferenceCompat
+            app:key="consume_sms_message"
+            app:title="@string/pref_sms_consumesms"
+            app:summary="@string/pref_sms_consumesms_summary"
+            app:defaultValue="false"
+            />
+        <SwitchPreferenceCompat
+            app:key="also_match_body"
+            app:title="@string/pref_match_message_body"
+            app:summary="@string/pref_match_message_body_summary"
+            app:defaultValue="false"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="reply settings"
+        app:title="Reply Settings"
+        >
+        <SwitchPreferenceCompat
+            app:key="include_subject"
+            app:title="@string/pref_sms_subject"
+            app:summary="@string/pref_sms_subject_summary"
+            app:defaultValue="false"
+            />
+        <SwitchPreferenceCompat
+            app:key="use_received_service_center"
+            app:title="@string/pref_sms_servicecenter"
+            app:summary="@string/pref_sms_servicecenter_summary"
+            app:defaultValue="false"
+            />
+        <SwitchPreferenceCompat
+            app:key="include_dest_address"
+            app:title="@string/pref_sms_send_dest"
+            app:summary="@string/pref_sms_send_dest_summary"
+            app:defaultValue="false"
+            />
+        <Preference
+            app:key="edit_replies"
+            app:title="@string/pref_editreplies"
+            app:summary="@string/pref_editreplies_summary"
+            >
+            <intent
+                android:targetClass=".ReplyEditor" />
+
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

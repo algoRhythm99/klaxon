@@ -1,21 +1,21 @@
 package com.github.android.klaxonreborn.tests.app;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.net.Uri;
+import android.util.Log;
+
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
+
+import com.github.android.klaxonreborn.PageViewer;
+import com.github.android.klaxonreborn.Pager.Pages;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import android.content.Intent;
-import android.net.Uri;
-import android.content.ContentValues;
-import android.util.Log;
-
-import com.github.android.klaxonreborn.PageViewer;
-import com.github.android.klaxonreborn.Pager.Pages;
 
 @RunWith(AndroidJUnit4.class)
 public class PageViewerTest {

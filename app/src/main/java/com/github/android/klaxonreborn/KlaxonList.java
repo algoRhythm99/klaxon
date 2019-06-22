@@ -1,7 +1,5 @@
 package com.github.android.klaxonreborn;
 
-import org.nerdcircus.android.klaxon.Pager.Replies;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
@@ -21,6 +19,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
 import com.github.android.klaxonreborn.Pager.Pages;
 import com.github.android.klaxonreborn.Pager.Replies;
 
@@ -70,14 +69,16 @@ public class KlaxonList extends ListActivity {
         String[] cols = new String[]{Pager.Pages._ID, Pager.Pages.SUBJECT, Pager.Pages.SENDER, Pager.Pages.SERVICE_CENTER, Pager.Pages.ACK_STATUS};
         Log.d(TAG, "querying");
         mCursor = Pager.Pages.query(this.getContentResolver(), cols);
-        startManagingCursor(mCursor);
-        Log.d(TAG, "found rows:" + mCursor.getCount());
-        Log.d(TAG, "setting adapter");
-        ListAdapter adapter = new EscAdapter(this,
-                R.layout.esclist_item,
-                mCursor);
-        Log.d(TAG, "adapter created.");
-        setListAdapter(adapter);
+        if (null != mCursor) {
+            startManagingCursor(mCursor);
+            Log.d(TAG, "found rows:" + mCursor.getCount());
+            Log.d(TAG, "setting adapter");
+            ListAdapter adapter = new EscAdapter(this,
+                    R.layout.esclist_item,
+                    mCursor);
+            Log.d(TAG, "adapter created.");
+            setListAdapter(adapter);
+        }
         Log.d(TAG, "oncreate done.");
         registerForContextMenu(getListView());
     }
@@ -104,14 +105,16 @@ public class KlaxonList extends ListActivity {
         Cursor c = managedQuery(Replies.CONTENT_URI,
                 new String[]{Replies._ID, Replies.NAME, Replies.BODY, Replies.ACK_STATUS},
                 "show_in_menu == 1", null, null);
-        c.moveToFirst();
-        while (!c.isAfterLast()) {
-            addReplyMenuItem(menu,
-                    c.getString(c.getColumnIndex(Replies.NAME)),
-                    c.getString(c.getColumnIndex(Replies.BODY)),
-                    c.getInt(c.getColumnIndex(Replies.ACK_STATUS))
-            );
-            c.moveToNext();
+        if (null != c) {
+            c.moveToFirst();
+            while (!c.isAfterLast()) {
+                addReplyMenuItem(menu,
+                        c.getString(c.getColumnIndex(Replies.NAME)),
+                        c.getString(c.getColumnIndex(Replies.BODY)),
+                        c.getInt(c.getColumnIndex(Replies.ACK_STATUS))
+                );
+                c.moveToNext();
+            }
         }
         Intent i = new Intent(Intent.ACTION_PICK, Replies.CONTENT_URI);
         i.setType("vnd.android.cursor.item/reply");
@@ -131,7 +134,7 @@ public class KlaxonList extends ListActivity {
 
         MenuItem mi = menu.add(MENU_ALWAYS_GROUP, Menu.NONE, Menu.NONE, R.string.prefs_activity);
         mi.setIcon(android.R.drawable.ic_menu_preferences);
-        i = new Intent(this, MySettingsActivity.class);
+        i = new Intent(this, SettingsActivity.class);
         mi.setIntent(i);
 
         mi = menu.add((MENU_ALWAYS_GROUP | Menu.CATEGORY_SECONDARY), Menu.NONE, Menu.NONE, R.string.delete_all);

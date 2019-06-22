@@ -1,12 +1,9 @@
 package com.github.android.klaxonreborn.tests.pageparser;
 
-import android.test.ActivityInstrumentationTestCase2;
-import android.test.InstrumentationTestCase;
-
-import junit.framework.TestCase;
-
 import com.github.android.klaxonreborn.Alert;
 import com.github.android.klaxonreborn.pageparser.Standard;
+
+import junit.framework.TestCase;
 
 public class StandardTest extends TestCase {
 

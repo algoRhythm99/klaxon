@@ -5,6 +5,9 @@ import android.content.ContentValues;
 import com.github.android.klaxonreborn.Alert;
 import com.github.android.klaxonreborn.Pager.Pages;
 
+import com.github.android.klaxonreborn.Alert;
+import com.github.android.klaxonreborn.Pager.Pages;
+
 public class LabeledFields extends Standard {
     /* pageparser for gateways which include labels like "subj:", etc.
      */

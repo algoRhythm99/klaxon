@@ -1,9 +1,5 @@
 package com.github.android.klaxonreborn;
 
-import java.util.ArrayList;
-
-import org.nerdcircus.android.klaxon.Pager.Replies;
-
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -19,7 +15,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
 import com.github.android.klaxonreborn.Pager.Replies;
+
+import java.util.ArrayList;
+
 
 public class ReplyEditor extends Activity {
     private String TAG = "ReplyEditor";

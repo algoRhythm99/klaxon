@@ -14,10 +14,13 @@ import android.database.Cursor;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.preference.PreferenceManager;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
+
 
 public class Notifier extends BroadcastReceiver {
     public static String TAG = "KlaxonNotifier";
@@ -114,7 +117,7 @@ public class Notifier extends BroadcastReceiver {
                 .setContentText("This will be overridden below")
                 .setSmallIcon(R.drawable.bar_icon)
                 .setWhen(System.currentTimeMillis())
-                .setLights(R.color.red, 1000, 100)
+                .setLights(ContextCompat.getColor(context, R.color.red), 1000, 100)
                 .setAutoCancel(true)
                 .setContentIntent(PendingIntent.getActivity(context, 0, listIntent, 0))
                 .setDeleteIntent(PendingIntent.getBroadcast(context, 0, cancelIntent, 0))

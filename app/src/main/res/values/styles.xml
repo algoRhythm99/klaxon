@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="NotificationFont" parent="@android:style/TextAppearance.Large.Inverse">
+    <style name="NotificationFont" parent="TextAppearance.AppCompat.Large.Inverse">
     </style>
 </resources>

@@ -1,11 +1,11 @@
 package com.github.android.klaxonreborn.pageparser;
 
-import org.nerdcircus.android.klaxon.Pager.Pages;
-
 import android.content.ContentValues;
 import android.util.Log;
 
 import com.github.android.klaxonreborn.Pager.Pages;
+
+
 public class Go2Mobile extends Standard {
     /* pageparser for go2mobile.com
      * basically just Standard, but with ':' as a linebreak
