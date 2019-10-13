@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     private static final String[] PAGES_COLUMNS = new String[]{
             Pager.Pages._ID
-          , Pager.Pages.SUBJECT
-          , Pager.Pages.SENDER
-          , Pager.Pages.SERVICE_CENTER
-          , Pager.Pages.ACK_STATUS
+            , Pager.Pages.SUBJECT
+            , Pager.Pages.SENDER
+            , Pager.Pages.SERVICE_CENTER
+            , Pager.Pages.ACK_STATUS
     };
 
     //menu constants.
@@ -51,10 +51,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "oncreate done.");
     }
 
-    protected ListView getPagesList(boolean refresh)
-    {
-        if (null == pagesList)
-        {
+    protected ListView getPagesList(boolean refresh) {
+        if (null == pagesList) {
             pagesList = findViewById(R.id.pagesList);
             TextView emptyText = findViewById(android.R.id.empty);
             if (null != pagesList) {
@@ -63,14 +61,13 @@ public class MainActivity extends AppCompatActivity {
             }
             refresh = true;
         }
-        if (refresh)
-        {
+        if (refresh) {
             if (null != getPagesCursor(refresh)) {
                 Log.d(TAG, "found rows:" + getPagesCursor().getCount());
                 Log.d(TAG, "setting adapter");
                 ListAdapter adapter = new EscAdapter(this,
-                            R.layout.esclist_item,
-                            getPagesCursor());
+                        R.layout.pageslist_item,
+                        getPagesCursor());
                 if ((null != adapter) && (null != pagesList)) {
                     pagesList.setAdapter(adapter);
                 }
@@ -90,23 +87,19 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    protected ListView getPagesList()
-    {
+    protected ListView getPagesList() {
         return getPagesList(false);
     }
 
-    protected Cursor getPagesCursor(boolean refresh)
-    {
-        if (refresh || (null == mCursor))
-        {
+    protected Cursor getPagesCursor(boolean refresh) {
+        if (refresh || (null == mCursor)) {
             Log.d(TAG, "querying");
             mCursor = Pager.Pages.query(this.getContentResolver(), PAGES_COLUMNS);
         }
         return mCursor;
     }
 
-    protected Cursor getPagesCursor()
-    {
+    protected Cursor getPagesCursor() {
         return getPagesCursor(false);
     }
 }

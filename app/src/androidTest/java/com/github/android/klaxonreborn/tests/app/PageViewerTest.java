@@ -25,7 +25,7 @@ public class PageViewerTest {
     public ActivityTestRule<PageViewer> mActivityRule = new ActivityTestRule(PageViewer.class);
 
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         Log.d("KlaxonTest", "setting up..");
         //insert a dummy page, so we have one to view..
         ContentValues cv = new ContentValues();
@@ -38,22 +38,22 @@ public class PageViewerTest {
         cv.put(Pages.TRANSPORT, "nonexistant");
         Log.d("KlaxonTest", "trying to insert some data...");
         this.testpageUri = getInstrumentation().getTargetContext().getContentResolver().insert(Pages.CONTENT_URI, cv);
-        Log.d("KlaxonTest", "inserted: " + this.testpageUri.toString() );
+        Log.d("KlaxonTest", "inserted: " + this.testpageUri.toString());
         Intent i = new Intent(Intent.ACTION_VIEW, this.testpageUri);
         setActivityIntent(i);
 
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         Log.d("KlaxonTest", "tearing down.");
-        if(this.testpageUri != null){
+        if (this.testpageUri != null) {
             getActivity().getContentResolver().delete(this.testpageUri, null, null);
         }
     }
 
     @Test
-    public void testLaunchWithViewAction(){
+    public void testLaunchWithViewAction() {
         Log.d("XXXX", "attempting to launch with: " + this.testpageUri.toString());
         getActivity();
         assertTrue(true);

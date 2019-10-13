@@ -64,7 +64,7 @@ public class KlaxonList extends ListActivity {
 
         createDefaultPreferences();
 
-        setContentView(R.layout.esclist);
+        setContentView(R.layout.pageslist);
 
         String[] cols = new String[]{Pager.Pages._ID, Pager.Pages.SUBJECT, Pager.Pages.SENDER, Pager.Pages.SERVICE_CENTER, Pager.Pages.ACK_STATUS};
         Log.d(TAG, "querying");
@@ -74,7 +74,7 @@ public class KlaxonList extends ListActivity {
             Log.d(TAG, "found rows:" + mCursor.getCount());
             Log.d(TAG, "setting adapter");
             ListAdapter adapter = new EscAdapter(this,
-                    R.layout.esclist_item,
+                    R.layout.pageslist_item,
                     mCursor);
             Log.d(TAG, "adapter created.");
             setListAdapter(adapter);

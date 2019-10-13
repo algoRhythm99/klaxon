@@ -25,7 +25,7 @@ public class ReplyEditorTest {
     public ActivityTestRule<ReplyEditor> mActivityRule = new ActivityTestRule(ReplyEditor.class);
 
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         Log.d("KlaxonTest", "setting up..");
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(Replies.CONTENT_URI + "/1"));
         setActivityIntent(i);
@@ -33,12 +33,12 @@ public class ReplyEditorTest {
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         Log.d("KlaxonTest", "tearing down.");
     }
 
     @Test
-    public void testLaunch(){
+    public void testLaunch() {
         mActivityRule.getActivity();
         Assert.assertTrue(true);
     }

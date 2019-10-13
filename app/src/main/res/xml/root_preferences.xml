@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <SwitchPreferenceCompat
-        app:key="is_oncall"
-        app:title="@string/pref_oncall"
         app:defaultValue="true"
+        app:key="is_oncall"
         app:summaryOff="@string/pref_oncall_off"
         app:summaryOn="@string/pref_oncall_on"
-        />
+        app:title="@string/pref_oncall" />
 
     <PreferenceCategory
         app:key="notification_prefs"
-        app:title="@string/notification_prefs"
-        >
+        app:title="@string/notification_prefs">
         <!--
         <Preference
             app:defaultValue="false"
@@ -31,81 +28,68 @@
             app:title="@string/pref_alarm_volume" />
 
         <SwitchPreferenceCompat
-            app:key="vibrate"
-            app:title="@string/pref_vibrate"
             app:defaultValue="true"
-            />
+            app:key="vibrate"
+            app:title="@string/pref_vibrate" />
 
         <ListPreference
-            app:key="notification_interval"
-            app:title="@string/pref_notificationtime"
-            app:summary="@string/pref_notificationtime"
             app:defaultValue="20000"
             app:entries="@array/intervals"
             app:entryValues="@array/intervals_in_ms"
-            />
+            app:key="notification_interval"
+            app:summary="@string/pref_notificationtime"
+            app:title="@string/pref_notificationtime" />
     </PreferenceCategory>
 
     <PreferenceCategory
         app:key="receive settings"
-        app:title="@string/receive_settings"
-        >
+        app:title="@string/receive_settings">
         <EditTextPreference
-            app:key="sender_match"
-            app:title="@string/pref_sms_sender"
             app:defaultValue="@string/default_sender_match"
+            app:key="sender_match"
             app:summary="@string/pref_sms_sender_summary"
-            />
+            app:title="@string/pref_sms_sender" />
         <ListPreference
-            app:key="pageparser"
-            app:title="@string/page_parser_type"
+            app:defaultValue="Standard"
             app:entries="@array/pageparser"
             app:entryValues="@array/pageparser"
-            app:defaultValue="Standard"
-            />
+            app:key="pageparser"
+            app:title="@string/page_parser_type" />
         <SwitchPreferenceCompat
+            app:defaultValue="false"
             app:key="consume_sms_message"
-            app:title="@string/pref_sms_consumesms"
             app:summary="@string/pref_sms_consumesms_summary"
-            app:defaultValue="false"
-            />
+            app:title="@string/pref_sms_consumesms" />
         <SwitchPreferenceCompat
-            app:key="also_match_body"
-            app:title="@string/pref_match_message_body"
-            app:summary="@string/pref_match_message_body_summary"
             app:defaultValue="false"
-            />
+            app:key="also_match_body"
+            app:summary="@string/pref_match_message_body_summary"
+            app:title="@string/pref_match_message_body" />
     </PreferenceCategory>
 
     <PreferenceCategory
         app:key="reply settings"
-        app:title="Reply Settings"
-        >
+        app:title="Reply Settings">
         <SwitchPreferenceCompat
+            app:defaultValue="false"
             app:key="include_subject"
-            app:title="@string/pref_sms_subject"
             app:summary="@string/pref_sms_subject_summary"
-            app:defaultValue="false"
-            />
+            app:title="@string/pref_sms_subject" />
         <SwitchPreferenceCompat
+            app:defaultValue="false"
             app:key="use_received_service_center"
-            app:title="@string/pref_sms_servicecenter"
             app:summary="@string/pref_sms_servicecenter_summary"
-            app:defaultValue="false"
-            />
+            app:title="@string/pref_sms_servicecenter" />
         <SwitchPreferenceCompat
-            app:key="include_dest_address"
-            app:title="@string/pref_sms_send_dest"
-            app:summary="@string/pref_sms_send_dest_summary"
             app:defaultValue="false"
-            />
+            app:key="include_dest_address"
+            app:summary="@string/pref_sms_send_dest_summary"
+            app:title="@string/pref_sms_send_dest" />
         <Preference
             app:key="edit_replies"
-            app:title="@string/pref_editreplies"
             app:summary="@string/pref_editreplies_summary"
-            >
-            <intent
-                android:targetClass=".ReplyEditor" />
+            app:title="@string/pref_editreplies">
+            <intent android:targetClass=".ReplyEditor" />
 
         </Preference>
     </PreferenceCategory>

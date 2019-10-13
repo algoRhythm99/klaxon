@@ -34,7 +34,7 @@ public class PageViewer extends Activity {
         super.onCreate(icicle);
         getSharedPreferences("responses", 0);
 
-        setContentView(R.layout.escview);
+        setContentView(R.layout.page_view);
 
         mSubjectView = (TextView) findViewById(R.id.view_subject);
         //mSubjectView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));

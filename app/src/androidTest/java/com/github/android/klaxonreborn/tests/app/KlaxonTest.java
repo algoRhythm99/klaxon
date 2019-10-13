@@ -18,7 +18,7 @@ public class KlaxonTest {
     public ActivityTestRule<KlaxonList> mActivityRule = new ActivityTestRule(KlaxonList.class);
 
     @Test
-    public void testLaunch(){
+    public void testLaunch() {
         mActivityRule.launchActivity();
         Assert.assertTrue(true);
     }

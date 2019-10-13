@@ -19,7 +19,7 @@ public class ReplyListTest {
     public ActivityTestRule<ReplyList> mActivityRule = new ActivityTestRule(ReplyList.class);
 
     @Test
-    public void testLaunch(){
+    public void testLaunch() {
         mActivityRule.launchActivity();
         Assert.assertTrue(true);
     }

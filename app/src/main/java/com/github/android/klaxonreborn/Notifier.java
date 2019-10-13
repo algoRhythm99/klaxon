@@ -130,7 +130,7 @@ public class Notifier extends BroadcastReceiver {
                 R.layout.notification));
 
         if (prefs.getBoolean("vibrate", true))
-            builder.setVibrate(new long[] { 0, 800, 500, 800 });
+            builder.setVibrate(new long[]{0, 800, 500, 800});
 
         if (prefs.getBoolean("use_alarm_stream", false)) {
             builder.setSound(alertsound, AudioManager.STREAM_ALARM);

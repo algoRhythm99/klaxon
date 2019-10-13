@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 
 public class LabeledFieldTest extends TestCase {
 
-    public void testMessage(){
+    public void testMessage() {
         String message = "Msg:alert body";
         Alert expected = new Alert();
         expected.setFrom("1234");
@@ -18,7 +18,7 @@ public class LabeledFieldTest extends TestCase {
         assertEquals(expected.getBody(), observed.getBody());
     }
 
-    public void testSubject(){
+    public void testSubject() {
         String message = "Subj:subject\nMsg:alert body";
         Alert expected = new Alert();
         expected.setFrom("1234");
@@ -29,7 +29,8 @@ public class LabeledFieldTest extends TestCase {
         assertEquals(expected.getBody(), observed.getBody());
         assertEquals(expected.getSubject(), observed.getSubject());
     }
-    public void testFrom(){
+
+    public void testFrom() {
         String message = "Frm:test@example.com\nSubj:subject\nMsg:alert body";
         Alert expected = new Alert();
         expected.setFrom("1234");

@@ -9,7 +9,7 @@ public class Go2MobileTest extends TestCase {
 
     // standard page. the magic is handled inside of the Android Framework,
     // so this test is pretty straightforward.
-    public void testSimple(){
+    public void testSimple() {
         String message = "test@example.com:subject:alert body";
         Alert expected = new Alert();
         expected.setFrom("1234");
@@ -22,12 +22,12 @@ public class Go2MobileTest extends TestCase {
         assertEquals(expected.getBody(), observed.getBody());
     }
 
-    public void testSubjectSnippet(){
+    public void testSubjectSnippet() {
         String message = "test@example.com::alert body with no alert subject. it has a large body so we only pull the beginning.";
         Alert expected = new Alert();
         expected.setFrom("1234");
         expected.setDisplayFrom("test@example.com");
-        expected.setSubject("alert body with no alert subject. it has a large body so we only pull the beginning.".substring(0,40));
+        expected.setSubject("alert body with no alert subject. it has a large body so we only pull the beginning.".substring(0, 40));
         Alert observed = (new Go2Mobile()).parse("1234", "", message);
         assertEquals(expected.getFrom(), observed.getFrom());
         assertEquals(expected.getSubject(), observed.getSubject());
@@ -35,7 +35,7 @@ public class Go2MobileTest extends TestCase {
 
     //*** Go2Mobile-specific tests. ***//
 
-    public void testColonSeparator(){
+    public void testColonSeparator() {
         String message = "someone@example.com:alert subject:alert body";
         Alert expected = new Alert();
         expected.setFrom("1234");
@@ -49,7 +49,7 @@ public class Go2MobileTest extends TestCase {
         assertEquals(expected.getBody(), observed.getBody());
     }
 
-    public void testTooManyColons(){
+    public void testTooManyColons() {
         String message = "test@example.com:some subject:alert:body with :colons";
         Alert expected = new Alert();
         expected.setFrom("1234");

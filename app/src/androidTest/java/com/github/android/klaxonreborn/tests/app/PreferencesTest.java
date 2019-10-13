@@ -17,7 +17,7 @@ public class PreferencesTest {
     public ActivityTestRule<Preferences> mActivityRule = new ActivityTestRule(Preferences.class);
 
     @Test
-    public void testLaunch(){
+    public void testLaunch() {
         mActivityRule.getActivity();
         Assert.assertTrue(true);
     }

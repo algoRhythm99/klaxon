@@ -8,16 +8,15 @@ import android.widget.ImageView;
 import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
 
-public class ReplyAdapter extends ResourceCursorAdapter
-{
+public class ReplyAdapter extends ResourceCursorAdapter {
     @SuppressWarnings("unused")
     private String TAG = "ReplyAdapter";
 
-    public ReplyAdapter(Context context, int layout, Cursor c){
+    public ReplyAdapter(Context context, int layout, Cursor c) {
         super(context, layout, c);
     }
 
-    public void bindView(View view, Context context, Cursor cursor){
+    public void bindView(View view, Context context, Cursor cursor) {
         ImageView icon = (ImageView) view.findViewById(R.id.icon);
         TextView subject = (TextView) view.findViewById(R.id.subject);
         TextView body = (TextView) view.findViewById(R.id.body);
@@ -29,7 +28,6 @@ public class ReplyAdapter extends ResourceCursorAdapter
         icon.setImageResource(Pager.getStatusResId(status));
     }
 
-    
 
 }
 
